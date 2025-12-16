@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">Foodie</h1>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active" data-section="home">Home</a>
+                <a href="#favorites" class="nav-link" data-section="favorites">Favorites</a>
+                <a href="#cart" class="nav-link" data-section="cart">Cart</a>
+                <a href="#profile" class="nav-link" data-section="profile">Profile</a>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search" placeholder="Search for food...">
+                <button id="search-btn">Search</button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="section active">
+        <h2>Popular Categories</h2>
+        <div class="categories">
+            <div class="category" data-category="popular">
+                <h3>Popular</h3>
+                <div class="food-grid" id="popular-foods"></div>
+            </div>
+            <div class="category" data-category="indian">
+                <h3>Indian</h3>
+                <div class="food-grid" id="indian-foods"></div>
+            </div>
+            <div class="category" data-category="chinese">
+                <h3>Chinese</h3>
+                <div class="food-grid" id="chinese-foods"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="favorites" class="section">
+        <h2>Your Favorites</h2>
+        <div class="food-grid" id="favorites-list"></div>
+    </section>
+
+    <section id="cart" class="section">
+        <h2>Your Cart</h2>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-total">
+            <p>Total: ₹<span id="total-price">0</span></p>
+            <button id="checkout-btn">Checkout</button>
+        </div>
+    </section>
+
+    <section id="profile" class="section">
+        <h2>Login</h2>
+        <div class="login-form">
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username or Email:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            <p class="signup-link">Don't have an account? <a href="#" id="signup-link">Sign up</a></p>
+        </div>
+    </section>
+
+    <div id="food-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="food-details"></div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
